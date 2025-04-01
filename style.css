@@ -1,0 +1,94 @@
+/* Global Styles */
+body {
+    background-color: #E2F5F8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for 3 columns */
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Column Styles */
+.column {
+    background-color: rgba(246, 242, 242, 0.55); /* F6F2F2 with 55% opacity */
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+/* Info Box (for text fields & buttons) */
+.info-box {
+    background-color: #EAEAEA;
+    border-radius: 16px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* Input Fields */
+.info-box input {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    margin-left: 10px;
+    outline: none;
+    width: 60%;
+}
+
+/* Button Styles */
+button.info-box {
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button.info-box:hover {
+    background-color: #dcdcdc;
+}
+
+/* Icon Styles */
+.info-box i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer button {
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #EAEAEA;
+    cursor: pointer;
+}
+
+.footer button:hover {
+    background-color: #dcdcdc;
+}
