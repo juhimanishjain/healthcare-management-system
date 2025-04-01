@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+
+    <header>
+        <h2>Patient Name</h2>
+        <select>
+            <option>Patient Profile</option>
+            <option>Settings</option>
+        </select>
+        <a href="#">Settings</a>
+    </header>
+
+    <div class="container">
+        <!-- First Column (Patient Info) -->
+        <div class="column">
+            <div class="info-box">Age: <input type="number" placeholder="Enter age"></div>
+            <div class="info-box">Gender: <input type="text" placeholder="Enter gender"></div>
+            <div class="info-box">Phone: <input type="tel" placeholder="Enter phone number"></div>
+            <div class="info-box">Emergency Contact Name: <input type="text" placeholder="Enter name"></div>
+            <div class="info-box">Emergency Contact Phone Number: <input type="tel" placeholder="Enter contact phone"></div>
+            <div class="info-box">Insurance Company: <input type="text" placeholder="Enter insurance company"></div>
+            <div class="info-box">Insurance ID #: <input type="text" placeholder="Enter insurance ID"></div>
+        </div>
+
+        <!-- Second Column (Medical History) -->
+        <div class="column">
+            <button class="info-box">Past Diagnoses</button>
+            <button class="info-box">Past Surgeries</button>
+            <button class="info-box">Allergies</button>
+            <button class="info-box">Current Medication</button>
+            <button class="info-box">Past Medication</button>
+            <div class="info-box">
+                <i class="fas fa-flask"></i> Lab Reports
+            </div>
+        </div>
+
+        <!-- Third Column (Appointments) -->
+        <div class="column">
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i> Upcoming Appointments
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button class="info-box">Print Summary or Download</button>
+    </div>
+
+</body>
+</html>
