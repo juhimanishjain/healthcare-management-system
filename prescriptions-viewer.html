@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Prescriptions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #2948ff;
+    }
+
+    .header a {
+      text-decoration: none;
+      color: #2948ff;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .prescription-section {
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .prescription {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+
+    .prescription:hover {
+      transform: translateY(-3px);
+    }
+
+    .prescription h2 {
+      margin: 0 0 10px;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .prescription p {
+      margin: 5px 0;
+      color: #444;
+    }
+
+    .prescription .label {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background-color: #2948ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1c34a3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>My Prescriptions</h1>
+    <a href="#">← Back to Profile</a>
+  </div>
+
+  <div class="container">
+    <div class="prescription-section">
+
+      <div class="prescription">
+        <h2>Atorvastatin 10mg</h2>
+        <p><span class="label">Dosage:</span> One tablet daily after dinner</p>
+        <p><span class="label">Prescribed By:</span> Dr. Susan Smith</p>
+        <p><span class="label">Date Issued:</span> March 20, 2025</p>
+        <p><span class="label">Refills:</span> 2 remaining</p>
+        <p><span class="label">Pharmacy:</span> CVS Health, Boston MA</p>
+        <p><span class="label">Instructions:</span> Avoid grapefruit juice while taking this medication.</p>
+        <a href="#" class="btn">Download PDF</a>
+      </div>
+
+      <div class="prescription">
+        <h2>Metformin 500mg</h2>
+        <p><span class="label">Dosage:</span> Two tablets daily with meals</p>
+        <p><span class="label">Prescribed By:</span> Dr. Emily Chen</p>
+        <p><span class="label">Date Issued:</span> February 15, 2025</p>
+        <p><span class="label">Refills:</span> 1 remaining</p>
+        <p><span class="label">Pharmacy:</span> Walgreens, Amherst MA</p>
+        <p><span class="label">Instructions:</span> Monitor blood sugar levels regularly.</p>
+        <a href="#" class="btn">Download PDF</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
