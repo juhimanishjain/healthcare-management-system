@@ -1,4 +1,4 @@
-# 🩺 Patient Portal – Spring 2025 Project  
+# Patient Portal – Spring 2025 Project  
 **University of Massachusetts Amherst**
 
 ### 👨‍🍳 Team Name: The Chefs
@@ -10,13 +10,13 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project aims to build a **digital patient portal** designed to improve the accessibility, accuracy, and efficiency of managing healthcare data. The portal supports essential patient information, medical records, appointment tracking, and prescription viewing, all within a clean and user-friendly interface.
 
 ---
 
-## 💡 Why This Matters
+## Why This Matters
 
 The importance of digitized patient information management stems from the need for:
 
@@ -28,9 +28,6 @@ The importance of digitized patient information management stems from the need f
 
 - **Patient Safety:**  
   Digital systems reduce the likelihood of human error, such as medication mix-ups or missing information.
-
-- **Personalized Care via AI Tools:**  
-  AI-driven systems can help recommend tailored treatment plans based on individual history.
 
 - **Telehealth Support:**  
   Enables remote access to medical records and consultations, increasing care accessibility regardless of location.
