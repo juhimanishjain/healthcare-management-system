@@ -1,7 +1,8 @@
 # Patient Portal – Spring 2025 Project  
-**University of Massachusetts Amherst**
 
-### 👨‍🍳 Team Name: The Chefs
+## CS 520 - UMass Amherst
+
+### Team Name: The Chefs
 
 - **Steven Tang**  
 - **Isha Bang** — `ibang@umass.edu`  
