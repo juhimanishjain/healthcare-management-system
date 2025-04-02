@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #E2F5F8, #26d0ce);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 320px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.toggle-buttons .active {
+  background: linear-gradient(to right, #396afc, #2948ff);
+  color: white;
+  border: none;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.active-form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.forgot {
+  text-align: right;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  color: #3b5998;
+  text-decoration: none;
+}
+
+.btn {
+  background: linear-gradient(to right, #396afc, #2948ff);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #2748b8, #1c34a3);
+}
+
+p {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+p a {
+  color: #2948ff;
+  text-decoration: none;
+}
