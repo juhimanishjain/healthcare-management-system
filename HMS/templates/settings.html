@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .danger {
+      background-color: #dc3545;
+    }
+    .danger:hover {
+      background-color: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Settings</h1>
+
+    <!-- Personal Info -->
+    <h2>Personal Information</h2>
+    <label>Full Name</label>
+    <input type="text" placeholder="John Doe">
+
+    <label>Date of Birth</label>
+    <input type="date">
+
+    <label>Gender</label>
+    <select>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Non-binary</option>
+      <option>Prefer not to say</option>
+    </select>
+
+    <!-- Contact -->
+    <h2>Contact & Emergency Details</h2>
+    <label>Email</label>
+    <input type="email" placeholder="john@example.com">
+
+    <label>Phone Number</label>
+    <input type="tel" placeholder="+1 123 456 7890">
+
+    <label>Emergency Contact Name</label>
+    <input type="text" placeholder="Jane Doe">
+
+    <label>Emergency Contact Number</label>
+    <input type="tel" placeholder="+1 987 654 3210">
+
+    <!-- Notifications -->
+    <h2>Communication Preferences</h2>
+    <label>Receive appointment reminders via:</label>
+    <select>
+      <option>Email</option>
+      <option>SMS</option>
+      <option>Phone Call</option>
+    </select>
+
+    <label>Allow lab/test result notifications?</label>
+    <select>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <!-- Privacy -->
+    <h2>Privacy & Consent</h2>
+    <label>
+      <input type="checkbox"> I consent to share my health data with my assigned provider.
+    </label>
+    <label>
+      <input type="checkbox"> I agree to receive wellness newsletters and tips.
+    </label>
+
+    <!-- Security -->
+    <h2>Account Security</h2>
+    <label>Change Password</label>
+    <input type="password" placeholder="New password">
+
+    <label>Confirm Password</label>
+    <input type="password" placeholder="Confirm new password">
+
+    <!-- Connected Apps -->
+    <h2>Connected Devices/Apps</h2>
+    <label>Sync with wearable devices (e.g., Fitbit, Apple Health):</label>
+    <select>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <!-- Danger Zone -->
+    <h2>Deactivate Account</h2>
+    <p>If you wish to deactivate your account, click the button below. You can always contact us to reactivate.</p>
+    <button class="danger">Deactivate Account</button>
+
+    <br><br>
+    <button>Save Changes</button>
+  </div>
+</body>
+</html>
