@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-1c(yb@mcfom%u=1)+d%t2fz-$em!2#o%i%q09^r)r0qk8vy8pi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://healthcare-management-bmeubuacaje9fba0.canadacentral-01.azurewebsites.net/']
+ALLOWED_HOSTS = ['healthcare-management-bmeubuacaje9fba0.canadacentral-01.azurewebsites.net']
 
 
 # Application definition
