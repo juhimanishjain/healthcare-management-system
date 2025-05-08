@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Options Button</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button id="toggle-options" aria-label="Toggle Accessibility Options"> Accessibility Options </button>
+        <div id="options-menu" class="hidden">
+            <button id="increase-font" aria-label="Increase Font">+A</button>
+            <button id="decrease-font" aria-label="Decrease Font">-A</button>
+            <button id="add-contrast" aria-label="Add Contrast">Add Contrast</button>
+            <button id="remove-contrast" aria-label="Remove Contrast">Remove Contrast</button>
+            <button id="zoom-in" aria-label="Zoom In">+</button>
+            <button id="zoom-out" aria-label="Zoom Out">-</button>
+            <button id="reset-zoom" aria-label="Reset Zoom">Reset</button>
+        </div>
+    </header>
+    <main id="content">
+        <p>This is a paragraph of text. It should be easy to read and accessible to all users.</p>
+        <p>Another paragraph to demonstrate the contrast and font size changes.</p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
