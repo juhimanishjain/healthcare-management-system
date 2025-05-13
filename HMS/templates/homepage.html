@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <h2>Patient Name</h2>
+        <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
         <select>
             <option>Patient Profile</option>
             <option>Settings</option>
@@ -22,13 +22,13 @@
     <div class="container">
         <!-- First Column (Patient Info) -->
         <div class="column">
-            <div class="info-box">Age: <input type="number" placeholder="Enter age"></div>
-            <div class="info-box">Gender: <input type="text" placeholder="Enter gender"></div>
-            <div class="info-box">Phone: <input type="tel" placeholder="Enter phone number"></div>
-            <div class="info-box">Emergency Contact Name: <input type="text" placeholder="Enter name"></div>
-            <div class="info-box">Emergency Contact Phone Number: <input type="tel" placeholder="Enter contact phone"></div>
-            <div class="info-box">Insurance Company: <input type="text" placeholder="Enter insurance company"></div>
-            <div class="info-box">Insurance ID #: <input type="text" placeholder="Enter insurance ID"></div>
+            <div class="info-box">Age: {{ profile.age }}</div>
+            <div class="info-box">Gender: {{ profile.gender }}</div>
+            <div class="info-box">Phone: {{ profile.phone_number }}</div>
+            <div class="info-box">Emergency Contact Name: {{ profile.emergency_contact_name }}</div>
+            <div class="info-box">Emergency Contact Phone Number: {{ profile.emergency_contact_phone }}</div>
+            <div class="info-box">Insurance Company: {{ profile.insurance_company }}</div>
+            <div class="info-box">Insurance ID #: {{ profile.insurance_id }}</div>
         </div>
 
         <!-- Second Column (Medical History) -->
@@ -46,9 +46,16 @@
         <!-- Third Column (Appointments) -->
         <div class="column">
             <div class="info-box">
-                <i class="fas fa-calendar-alt"></i> Upcoming Appointments
+                <i class="fas fa-calendar-alt"></i> Upcoming Appointments:
+                <ul>
+                    {% for appointment in appointments %}
+                        <li>{{ appointment.date }} at {{ appointment.time }} with Dr. {{ appointment.doctor.first_name }} {{ appointment.doctor.last_name }}</li>
+                    {% empty %}
+                        <li>No upcoming appointments</li>
+                    {% endfor %}
+                </ul>
             </div>
-            <a href="{% url 'appointments' %}"><button type="submit" class="btn">Schedule Appointment</button> 
+            <a href="{% url 'appointments' %}"><button type="submit" class="btn">Schedule Appointment</button></a>
         </div>
     </div>
 

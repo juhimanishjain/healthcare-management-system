@@ -2,11 +2,26 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from .models import Patient, Appointment, Prescription
 
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def home(request):
-    return render(request, 'homepage.html')
+    profile = Patient.objects.get(user=request.user)
 
+    # Fetch upcoming appointments
+    appointments = Appointment.objects.filter(patient=profile).order_by('appointment_date')
+
+    # Fetch prescriptions (if needed)
+    prescriptions = Prescription.objects.filter(patient=profile)
+
+    context = {
+        'profile': profile,
+        'appointments': appointments,
+        'prescriptions': prescriptions,
+    }
+    return render(request, 'homepage.html', context)
 # Example view for the prescriptions viewer
 def prescriptions_viewer(request):
     return render(request, 'prescriptions-viewer.html')
