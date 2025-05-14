@@ -105,11 +105,8 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>Schedule an Appointment</h2>
-        <form>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+        <form method="POST" action="{% url 'appointments' %}">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="date">Date:</label>
                 <input type="date" id="date" name="date" required>
@@ -117,6 +114,10 @@
             <div class="form-group">
                 <label for="time">Time:</label>
                 <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason:</label>
+                <input type="text" id="reason" name="reason" placeholder="e.g., General Consultation">
             </div>
             <div class="form-group">
                 <label for="reminder">Would you like to be reminded?</label>
@@ -137,15 +138,20 @@
         document.getElementById('myModal').style.display = 'none';
     }
 
-    // Prevent form submission for demonstration purposes
-    document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Appointment scheduled successfully!');
-        closeModal();
-    });
+    window.onclick = function(event) {
+        const modal = document.getElementById('myModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
     function printForm() {
+        const printContents = document.querySelector('.modal-content').innerHTML;
+        const originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
         window.print();
+        document.body.innerHTML = originalContents;
+        location.reload();
     }
 </script>
 

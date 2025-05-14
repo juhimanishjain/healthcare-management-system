@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Past Surgeries</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #80deea);
+      color: #1d3557;
+    }
+    header {
+      background-color: #004d40;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 22px;
+      color: #00695c;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+    }
+    th {
+      background-color: #b2ebf2;
+      color: #004d40;
+    }
+    tr:nth-child(even) { background-color: #f1f1f1; }
+    tr:hover { background-color: #e0f7fa; }
+    .btn-back {
+      display: inline-block;
+      margin-top: 30px;
+      background: linear-gradient(to right, #396afc, #2948ff);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      background-color: #004d40;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Past Surgeries</h1>
+    <a class="btn-back" href="/">Back to Home</a>
+  </header>
+  <div class="container">
+    <h2>Surgery History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Procedure</th>
+          <th>Date Performed</th>
+          <th>Hospital</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for surgery in surgeries %}
+        <tr>
+          <td>{{ surgery.procedure }}</td>
+          <td>{{ surgery.date_performed }}</td>
+          <td>{{ surgery.hospital }}</td>
+          <td>{{ surgery.notes }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">No past surgeries found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    &copy; 2025 Health Portal System | Empowering Patient-Centered Care
+  </footer>
+</body>
+</html>

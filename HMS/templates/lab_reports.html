@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Reports</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      background: #e0f7fa;
+    }
+    h2 {
+      text-align: center;
+      color: #006064;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #b2ebf2;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #00acc1;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    a.download-link {
+      color: #00796b;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>Lab Reports</h2>
+  {% if reports %}
+  <table>
+    <thead>
+      <tr>
+        <th>Test Name</th>
+        <th>Date Conducted</th>
+        <th>Summary</th>
+        <th>Report</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for report in reports %}
+        <tr>
+          <td>{{ report.test_name }}</td>
+          <td>{{ report.date_conducted }}</td>
+          <td>{{ report.result_summary }}</td>
+          <td>
+            {% if report.uploaded_file %}
+              <a href="{{ report.uploaded_file.url }}" class="download-link" download>Download</a>
+            {% else %}
+              No File
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>No lab reports available.</p>
+  {% endif %}
+</body>
+</html>

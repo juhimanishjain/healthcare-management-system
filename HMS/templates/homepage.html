@@ -1,67 +1,226 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Profile</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Portal</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #80deea);
+      color: #1d3557;
+    }
+
+    header {
+      background-color: #004d40;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: white;
+    }
+
+    header .btn-settings {
+      background-color: #00695c;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 40px 20px 30px;
+    }
+
+    .intro h2 {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .info-section {
+      background: white;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 1000px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+
+    .info-block {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px;
+    }
+
+    .info-block h3 {
+      font-size: 18px;
+      color: #00695c;
+      margin-bottom: 10px;
+    }
+
+    .info-block i {
+      margin-right: 6px;
+      color: #00796b;
+    }
+
+    .info-block p {
+      margin: 6px 0;
+    }
+
+    .card-tabs {
+      background: white;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1000px;
+      border-radius: 15px;
+      padding: 25px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card-tabs .card {
+      flex: 1;
+      background-color: #f0f9ff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid #cce;
+    }
+
+    .card-tabs .card:hover {
+      background-color: #e0f0ff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card-tabs .card i {
+      font-size: 20px;
+      color: #3949ab;
+      margin-bottom: 10px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 60px;
+      gap: 20px;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #396afc, #2948ff);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #2748b8, #1c34a3);
+    }
+
+    footer {
+      text-align: center;
+      background-color: #004d40;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Welcome!</h1>
+    <button class="btn-settings" onclick="window.location.href='/settings/'">Settings</button>
+  </header>
 
-    <header>
-        <h2>{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
-        <select>
-            <option>Patient Profile</option>
-            <option>Settings</option>
-        </select>
-        <a href="{% url 'settings' %}">Settings</a>
-    </header>
+  <div class="intro">
+    <h2>Your Health. Your Records. One Place.</h2>
+    <p>Access and manage your health information with ease — from appointments to prescriptions, it's all here.</p>
+  </div>
 
-    <div class="container">
-        <!-- First Column (Patient Info) -->
-        <div class="column">
-            <div class="info-box">Age: {{ profile.age }}</div>
-            <div class="info-box">Gender: {{ profile.gender }}</div>
-            <div class="info-box">Phone: {{ profile.phone_number }}</div>
-            <div class="info-box">Emergency Contact Name: {{ profile.emergency_contact_name }}</div>
-            <div class="info-box">Emergency Contact Phone Number: {{ profile.emergency_contact_phone }}</div>
-            <div class="info-box">Insurance Company: {{ profile.insurance_company }}</div>
-            <div class="info-box">Insurance ID #: {{ profile.insurance_id }}</div>
-        </div>
-
-        <!-- Second Column (Medical History) -->
-        <div class="column">
-            <button class="info-box">Past Diagnoses</button>
-            <button class="info-box">Past Surgeries</button>
-            <button class="info-box">Allergies</button>
-            <button class="info-box">Current Medication</button>
-            <button class="info-box">Past Medication</button>
-            <div class="info-box">
-                <i class="fas fa-flask"></i> Lab Reports
-            </div>
-        </div>
-
-        <!-- Third Column (Appointments) -->
-        <div class="column">
-            <div class="info-box">
-                <i class="fas fa-calendar-alt"></i> Upcoming Appointments:
-                <ul>
-                    {% for appointment in appointments %}
-                        <li>{{ appointment.date }} at {{ appointment.time }} with Dr. {{ appointment.doctor.first_name }} {{ appointment.doctor.last_name }}</li>
-                    {% empty %}
-                        <li>No upcoming appointments</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <a href="{% url 'appointments' %}"><button type="submit" class="btn">Schedule Appointment</button></a>
-        </div>
+  <div class="info-section">
+    <div class="info-block">
+      <h3><i class="fas fa-user"></i>Basic Information</h3>
+      <p><strong>Age:</strong> {{ profile.age }}</p>
+      <p><strong>Gender:</strong> {{ profile.gender }}</p>
+      <p><strong>Phone:</strong> {{ profile.phone_number }}</p>
+      <p><strong>Emergency Contact:</strong> {{ profile.emergency_contact_name }} ({{ profile.emergency_contact_phone }})</p>
     </div>
 
-    <div class="footer">
-        <button class="info-box">Print Summary or Download</button>
+    <div class="info-block">
+      <h3><i class="fas fa-id-card"></i>Insurance Info</h3>
+      <p><strong>Company:</strong> {{ profile.insurance_company }}</p>
+      <p><strong>ID:</strong> {{ profile.insurance_id }}</p>
     </div>
 
+    <div class="info-block">
+      <h3><i class="fas fa-calendar-check"></i>Appointments</h3>
+      {% if appointments %}
+        <ul>
+          {% for appointment in appointments %}
+            <li>{{ appointment.date }} with Dr. {{ appointment.doctor.last_name }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No upcoming appointments.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="card-tabs">
+    <div class="card" onclick="window.location.href='/prescriptions/'">
+      <i class="fas fa-pills"></i>
+      <div>Current Medications</div>
+    </div>
+    <div class="card" onclick="window.location.href='/past-medications/'">
+      <i class="fas fa-notes-medical"></i>
+      <div>Past Medications</div>
+    </div>
+    <div class="card" onclick="window.location.href='/past-diagnosis/'">
+        <i class="fas fa-pills"></i>
+        <div>Past Diagnosis</div>
+      </div>
+      <div class="card" onclick="window.location.href='/past-surgeries/'">
+        <i class="fas fa-notes-medical"></i>
+        <div>Past Surgeries</div>
+      </div>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn" onclick="window.location.href='/appointments/'">Schedule Appointment</button>
+    <button class="btn" onclick="window.location.href='/lab-reports/'">Lab Reports</button>
+  </div>
+
+  <footer>
+    © 2025 Health Portal System | Empowering Patient-Centered Care
+  </footer>
 </body>
 </html>
