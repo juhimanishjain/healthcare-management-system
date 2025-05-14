@@ -33,3 +33,33 @@ class Prescription(models.Model):
     def __str__(self):
         return f"{self.medication_name} prescribed to {self.patient}"
     
+class Diagnosis(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    condition = models.CharField(max_length=255)
+    date_diagnosed = models.DateField()
+    notes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.condition} ({self.date_diagnosed})"
+
+
+class Surgery(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    procedure = models.CharField(max_length=255)
+    date_performed = models.DateField()
+    hospital = models.CharField(max_length=255, blank=True, null=True)
+    notes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.procedure} on {self.date_performed}"
+    
+class LabReport(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    test_name = models.CharField(max_length=255)
+    date_conducted = models.DateField()
+    result_summary = models.TextField(blank=True)
+    uploaded_file = models.FileField(upload_to='lab_reports/', blank=True)
+
+    def __str__(self):
+        return f"{self.test_name} ({self.date_conducted})"
+
