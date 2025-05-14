@@ -45,6 +45,33 @@ The importance of digitized patient information management stems from the need f
 - Downloadable or printable summaries
 
 
+from pathlib import Path
+
+readme_content = """
+# Healthcare Management System
+
+This is a web-based Healthcare Management System built with Django. It allows patients to register, log in, manage their health data, schedule appointments, view prescriptions, and update personal settings.
+
+## Features
+
+- Patient registration and login
+- View and update profile details
+- Schedule appointments via modal interface
+- View and manage prescriptions
+- Access to lab reports and past medical records
+- Mobile-friendly and responsive UI
+
+## Technologies Used
+
+- Django (Python)
+- HTML, CSS, JavaScript
+- PostgreSQL
+- Bootstrap Icons / Font Awesome
+
+## Setup Instructions
+
+1. **Clone the repository**
+
 
 
 
