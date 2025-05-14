@@ -45,6 +45,11 @@ The importance of digitized patient information management stems from the need f
 - Downloadable or printable summaries
 
 
+
+python
+Always show details
+
+Copy
 from pathlib import Path
 
 readme_content = """
@@ -72,6 +77,35 @@ This is a web-based Healthcare Management System built with Django. It allows pa
 
 1. **Clone the repository**
 
+git clone https://github.com/your-username/healthcare-management-system.git
+cd healthcare-management-system
 
+2. **Create and activate a virtual environment**
 
+python3 -m venv env
+source env/bin/activate
 
+3. **Install dependencies**
+
+pip install -r requirements.txt
+
+4. **Configure environment variables**
+
+Create a `.env` file in the root directory with the following content:
+
+DBNAME=your_db_name
+DBUSER=your_db_user
+DBPASS=your_db_password
+DBHOST=localhost
+DBPORT=5432
+SECRET_KEY=your_django_secret_key
+
+5. **Apply migrations and run the server**
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+6. **Access the App**
+
+Visit `http://127.0.0.1:8000/` in your browser.
